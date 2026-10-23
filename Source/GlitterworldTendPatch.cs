@@ -14,13 +14,13 @@ namespace LuciferiumOverhaul
         {
             var harmony = new Harmony("local.luciferiumoverhaul.glitterworld");
             var utility = AccessTools.TypeByName("RimWorld.TendUtility");
-            if (utility == null) { Log.Error("[Luciferium Overhaul] TendUtility not found."); return; }
+            if (utility == null) { Log.Error("[Litmitless Luciferium] TendUtility not found."); return; }
             var tendMethods = utility.GetMethods(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static)
                 .Where(m => m.Name == "DoTend" && m.GetParameters().Count(p => typeof(Pawn).IsAssignableFrom(p.ParameterType)) >= 2
                   && m.GetParameters().Any(p => typeof(Thing).IsAssignableFrom(p.ParameterType))).ToList();
             foreach (var method in tendMethods)
                 harmony.Patch(method, postfix: new HarmonyMethod(typeof(LOGlitterworldStartup), nameof(TendPostfix)));
-            Log.Message("[Luciferium Overhaul] Patched " + tendMethods.Count + " tending method(s).");
+            Log.Message("[Litmitless Luciferium] Patched " + tendMethods.Count + " tending method(s).");
         }
 
         // __args avoids binding to version-specific parameter names.
@@ -63,7 +63,7 @@ namespace LuciferiumOverhaul
                         patient.health.RemoveHediff(h);
                 }
             }
-            catch (Exception ex) { Log.Error("[Luciferium Overhaul] Glitterworld treatment failed: " + ex); }
+            catch (Exception ex) { Log.Error("[Litmitless Luciferium] Glitterworld treatment failed: " + ex); }
         }
     }
 }
