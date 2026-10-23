@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThoughtDef>
+    <defName>LO_SevereLuciferiumWithdrawal</defName>
+    <label>Schwerer Luciferium-Entzug</label>
+    <description>Die Luciferium-Mechaniten verlieren ihren Zusammenhalt. Der Körper und die Psyche leiden unter schwerem Entzug.</description>
+    <workerClass>LuciferiumOverhaul.LOSevereWithdrawalThoughtWorker</workerClass>
+    <stages>
+      <li>
+        <label>Schwerer Luciferium-Entzug</label>
+        <baseMoodEffect>-60</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+</Defs>
