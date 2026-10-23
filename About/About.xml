@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-  <name>Luciferium Overhaul (Development)</name>
-  <author>Luciferium Overhaul Project</author>
+  <name>Litmitless Luciferium</name>
+  <author>Litmitless Luciferium Project</author>
   <packageId>local.luciferiumoverhaul</packageId>
-  <description>Development build for RimWorld 1.6. Experimental RimWorld 1.6 build. Do not use on an only save. Glitterworld effects require in-game verification.</description>
+  <description>Luciferium rebalanced for RimWorld 1.6: powerful body enhancements, configurable healing and withdrawal, age reversal, and improved glitterworld medicine. Back up your save before updating.</description>
   <modDependencies><li><packageId>brrainz.harmony</packageId><displayName>Harmony</displayName><steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl></li></modDependencies>
   <loadAfter><li>brrainz.harmony</li></loadAfter>
   <supportedVersions><li>1.6</li></supportedVersions>
