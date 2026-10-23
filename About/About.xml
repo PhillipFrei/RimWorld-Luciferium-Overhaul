@@ -4,5 +4,7 @@
   <author>Luciferium Overhaul Project</author>
   <packageId>local.luciferiumoverhaul</packageId>
   <description>Development build for RimWorld 1.6. Not tested in-game; glitterworld medicine work pending.</description>
+  <modDependencies><li><packageId>brrainz.harmony</packageId><displayName>Harmony</displayName><steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl></li></modDependencies>
+  <loadAfter><li>brrainz.harmony</li></loadAfter>
   <supportedVersions><li>1.6</li></supportedVersions>
 </ModMetaData>
