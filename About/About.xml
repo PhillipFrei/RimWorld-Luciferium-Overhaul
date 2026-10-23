@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>Luciferium Overhaul (Development)</name>
+  <author>Luciferium Overhaul Project</author>
+  <packageId>local.luciferiumoverhaul</packageId>
+  <description>Development build for RimWorld 1.6. Not tested in-game; glitterworld medicine work pending.</description>
+  <supportedVersions><li>1.6</li></supportedVersions>
+</ModMetaData>
