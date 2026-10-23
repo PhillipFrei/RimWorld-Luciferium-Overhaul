@@ -27,11 +27,12 @@ namespace LuciferiumOverhaul
         public override void DoWindowContents(Rect rect)
         {
             Widgets.Label(new Rect(rect.x, rect.y, rect.width, 25f),
-                "Große Luciferium-Heilung: Gesundheitszustände auswählen");
+                "Major Healing: Select Health Conditions");
             Widgets.Label(new Rect(rect.x, rect.y + 28f, rect.width, 45f),
-                "Auto = sichere Standardregeln, Immer = zusätzlich erlauben, Nie = ausschließen. " +
-                "Genregeneration, Schwangerschaft, fehlende Teile und Luciferium-Sucht bleiben immer geschützt.");
-            search = Widgets.TextField(new Rect(rect.x, rect.y + 77f, rect.width, 27f), search);
+                "Auto = safe default rules; Always = include; Never = exclude. " +
+                "Gene recovery, pregnancy, missing body parts and Luciferium addiction always remain protected.");
+            Widgets.Label(new Rect(rect.x, rect.y + 77f, 68f, 27f), "Search:");
+            search = Widgets.TextField(new Rect(rect.x + 70f, rect.y + 77f, rect.width - 70f, 27f), search);
 
             var visible = DefDatabase<HediffDef>.AllDefsListForReading
                 .Where(d => d != null && d.defName != null &&
@@ -62,13 +63,13 @@ namespace LuciferiumOverhaul
                 var button = new Rect(line.xMax - 126f, line.y, 123f, 26f);
                 if (protectedState)
                 {
-                    Widgets.Label(button, "Geschützt");
+                    Widgets.Label(button, "Protected");
                     continue;
                 }
 
                 bool blocked = settings.blockedMajorHediffs.Contains(n);
                 bool forced = settings.forcedMajorHediffs.Contains(n);
-                string state = blocked ? "Nie" : forced ? "Immer" : "Auto";
+                string state = blocked ? "Never" : forced ? "Always" : "Auto";
                 if (Widgets.ButtonText(button, state))
                 {
                     settings.blockedMajorHediffs.Remove(n);
@@ -81,7 +82,7 @@ namespace LuciferiumOverhaul
             }
             Widgets.EndScrollView();
 
-            if (Widgets.ButtonText(new Rect(rect.xMax - 160f, rect.yMax - 34f, 160f, 30f), "Schließen"))
+            if (Widgets.ButtonText(new Rect(rect.xMax - 160f, rect.yMax - 34f, 160f, 30f), "Close"))
                 Close();
         }
 
