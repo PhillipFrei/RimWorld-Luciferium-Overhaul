@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <RecipeDef>
+    <defName>LO_MakeLuciferium</defName>
+    <label>Luciferium herstellen</label>
+    <jobString>Stelle luciferium herstellen her.</jobString>
+    <workAmount>900</workAmount>
+    <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+    <workSkill>Intellectual</workSkill>
+    <researchPrerequisite>DrugProduction</researchPrerequisite>
+    <recipeUsers><li>DrugLab</li></recipeUsers>
+    <ingredients>
+      <li><filter><thingDefs><li>MedicineHerbal</li></thingDefs></filter><count>2</count></li>
+      <li><filter><thingDefs><li>PsychoidLeaves</li></thingDefs></filter><count>10</count></li>
+      <li><filter><thingDefs><li>Ambrosia</li></thingDefs></filter><count>1</count></li>
+    </ingredients>
+    <products><Luciferium>1</Luciferium></products>
+    <fixedIngredientFilter><thingDefs><li>MedicineHerbal</li><li>PsychoidLeaves</li><li>Ambrosia</li></thingDefs></fixedIngredientFilter>
+  </RecipeDef>
+  <RecipeDef>
+    <defName>LO_MakeLuciferium10</defName>
+    <label>Luciferium herstellen (10×)</label>
+    <jobString>Stelle luciferium herstellen (10×) her.</jobString>
+    <workAmount>9000</workAmount>
+    <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+    <workSkill>Intellectual</workSkill>
+    <researchPrerequisite>DrugProduction</researchPrerequisite>
+    <recipeUsers><li>DrugLab</li></recipeUsers>
+    <ingredients>
+      <li><filter><thingDefs><li>MedicineHerbal</li></thingDefs></filter><count>20</count></li>
+      <li><filter><thingDefs><li>PsychoidLeaves</li></thingDefs></filter><count>100</count></li>
+      <li><filter><thingDefs><li>Ambrosia</li></thingDefs></filter><count>10</count></li>
+    </ingredients>
+    <products><Luciferium>10</Luciferium></products>
+    <fixedIngredientFilter><thingDefs><li>MedicineHerbal</li><li>PsychoidLeaves</li><li>Ambrosia</li></thingDefs></fixedIngredientFilter>
+  </RecipeDef>
+  <RecipeDef>
+    <defName>LO_MakeGlitterworldMedicine</defName>
+    <label>Glitzerwelt-Medizin herstellen</label>
+    <jobString>Stelle glitzerwelt-medizin herstellen her.</jobString>
+    <workAmount>1100</workAmount>
+    <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+    <workSkill>Intellectual</workSkill>
+    <researchPrerequisite>MedicineProduction</researchPrerequisite>
+    <recipeUsers><li>DrugLab</li></recipeUsers>
+    <ingredients>
+      <li><filter><thingDefs><li>MedicineIndustrial</li></thingDefs></filter><count>1</count></li>
+      <li><filter><thingDefs><li>Luciferium</li></thingDefs></filter><count>1</count></li>
+    </ingredients>
+    <products><MedicineUltratech>1</MedicineUltratech></products>
+    <fixedIngredientFilter><thingDefs><li>MedicineIndustrial</li><li>Luciferium</li></thingDefs></fixedIngredientFilter>
+  </RecipeDef>
+  <RecipeDef>
+    <defName>LO_MakeGlitterworldMedicine10</defName>
+    <label>Glitzerwelt-Medizin herstellen (10×)</label>
+    <jobString>Stelle glitzerwelt-medizin herstellen (10×) her.</jobString>
+    <workAmount>11000</workAmount>
+    <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+    <workSkill>Intellectual</workSkill>
+    <researchPrerequisite>MedicineProduction</researchPrerequisite>
+    <recipeUsers><li>DrugLab</li></recipeUsers>
+    <ingredients>
+      <li><filter><thingDefs><li>MedicineIndustrial</li></thingDefs></filter><count>10</count></li>
+      <li><filter><thingDefs><li>Luciferium</li></thingDefs></filter><count>10</count></li>
+    </ingredients>
+    <products><MedicineUltratech>10</MedicineUltratech></products>
+    <fixedIngredientFilter><thingDefs><li>MedicineIndustrial</li><li>Luciferium</li></thingDefs></fixedIngredientFilter>
+  </RecipeDef>
+</Defs>
