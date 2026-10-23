@@ -95,7 +95,7 @@ namespace LuciferiumOverhaul
         public override void DoSettingsWindowContents(Rect rect)
         {
             const float bottomArea = 52f;
-            const float contentHeight = 770f;
+            const float contentHeight = 1030f;
             Rect viewRect = new Rect(rect.x, rect.y, rect.width, Math.Max(100f, rect.height - bottomArea));
             Rect contentRect = new Rect(0f, 0f, Math.Max(200f, rect.width - 22f), contentHeight);
 
@@ -104,7 +104,7 @@ namespace LuciferiumOverhaul
             list.Begin(contentRect);
 
             list.Label("LUCIFERIUM EFFECTS");
-            list.Label("Mood bonus: +" + settings.moodBonus.ToString("0") + " (default +30)");
+            list.Label("Mood modifier: " + settings.moodBonus.ToString("+0;-0;0") + " (default +30)");
             int mood = (int)list.Slider(settings.moodBonus, -100, 100);
             if (mood != settings.moodBonus)
             {
