@@ -1,0 +1,24 @@
+name: RimWorld 1.6 build
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - name: Compile against RimWorld 1.6.4871 reference assemblies
+        run: dotnet build Source/LuciferiumOverhaul.csproj -c Release
+      - name: Assemble mod directory
+        run: |
+          mkdir -p output/LuciferiumOverhaul/Assemblies
+          cp Source/bin/Release/net472/LuciferiumOverhaul.dll output/LuciferiumOverhaul/Assemblies/
+          cp -R About Defs Patches output/LuciferiumOverhaul/
+      - uses: actions/upload-artifact@v4
+        with:
+          name: LuciferiumOverhaul-RimWorld-1.6
+          path: output/LuciferiumOverhaul/
