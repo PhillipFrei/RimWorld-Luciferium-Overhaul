@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/HediffDef[defName="LuciferiumHigh"]/comps</xpath>
+    <value><li Class="LuciferiumOverhaul.LOHealingProperties" /></value>
+  </Operation>
+</Patch>
