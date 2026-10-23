@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- The last LuciferiumAddiction stage is vanilla's "unmet" stage,
+       used only when Chemical_Luciferium need reaches zero.
+       Preserve vanilla berserk and lethal consequences. -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/HediffDef[defName="LuciferiumAddiction"]/stages/li[last()]/capMods</xpath>
+    <value>
+      <li>
+        <capacity>Moving</capacity>
+        <offset>-0.5</offset>
+      </li>
+      <li>
+        <capacity>Manipulation</capacity>
+        <offset>-0.35</offset>
+      </li>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/HediffDef[defName="LuciferiumAddiction"]/stages/li[last()]</xpath>
+    <value>
+      <painFactor>1.5</painFactor>
+    </value>
+  </Operation>
+</Patch>
