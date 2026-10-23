@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThoughtDef>
+    <defName>LO_LuciferiumMood</defName>
+    <workerClass>RimWorld.ThoughtWorker_Hediff</workerClass>
+    <hediff>LuciferiumHigh</hediff>
+    <stages><li><label>Luciferium</label><baseMoodEffect>30</baseMoodEffect></li></stages>
+  </ThoughtDef>
+</Defs>
