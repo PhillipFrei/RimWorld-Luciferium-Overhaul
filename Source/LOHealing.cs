@@ -124,13 +124,13 @@ namespace LuciferiumOverhaul
         {
             var candidates = Pawn.health.hediffSet.hediffs.Where(EligibleMajorHealing).ToList();
             if (Prefs.DevMode)
-                Log.Message("[Luciferium Overhaul] Major healing for " + Pawn.LabelShort
+                Log.Message("[Litmitless Luciferium] Major healing for " + Pawn.LabelShort
                     + ": eligible=" + string.Join(", ", candidates.Select(h => h.def.defName).ToArray()));
 
             if (candidates.TryRandomElement(out Hediff selected))
             {
                 if (Prefs.DevMode)
-                    Log.Message("[Luciferium Overhaul] Major healing removed: " + selected.def.defName);
+                    Log.Message("[Litmitless Luciferium] Major healing removed: " + selected.def.defName);
                 Pawn.health.RemoveHediff(selected);
             }
         }
