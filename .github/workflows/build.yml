@@ -11,6 +11,8 @@ jobs:
       - uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '8.0.x'
+      - name: Validate XML and exact recipe quantities
+        run: python3 tests/check_static.py
       - name: Compile against RimWorld 1.6.4871 reference assemblies
         run: dotnet build Source/LuciferiumOverhaul.csproj -c Release
       - name: Assemble mod directory
