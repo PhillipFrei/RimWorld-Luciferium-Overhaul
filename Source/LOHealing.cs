@@ -51,9 +51,15 @@ namespace LuciferiumOverhaul
             // Explicit fallbacks support addiction defs that do not inherit Hediff_Addiction.
             // Do not remove gene-related dependencies or arbitrary positive Hediffs.
             bool isOtherAddiction = n.EndsWith("Addiction", StringComparison.OrdinalIgnoreCase);
+            bool isDrugTolerance = n.EndsWith("Tolerance", StringComparison.OrdinalIgnoreCase);
+            // BloodRot and many Royalty/modded illnesses are tendable HediffWithComps
+            // without a HediffComp_Immunizable. Explicitly include treatable bad states.
+            bool isTreatableIllness = h.def.isBad && h.def.tendable;
             return h is Hediff_Injury
                 || h is Hediff_Addiction
                 || isOtherAddiction
+                || isDrugTolerance
+                || isTreatableIllness
                 || h.TryGetComp<HediffComp_Immunizable>() != null
                 || h.def.chronic
                 || SafeTemporaryConditions.Contains(n);
