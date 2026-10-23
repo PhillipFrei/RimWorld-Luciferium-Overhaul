@@ -2,12 +2,12 @@
 <Defs>
   <ThoughtDef>
     <defName>LO_SevereLuciferiumWithdrawal</defName>
-    <label>Schwerer Luciferium-Entzug</label>
-    <description>Die Luciferium-Mechaniten verlieren ihren Zusammenhalt. Der Körper und die Psyche leiden unter schwerem Entzug.</description>
+    <label>Severe Luciferium Withdrawal</label>
+    <description>Without a sustaining Luciferium dose, the mechanites destabilize and the body and mind suffer devastating withdrawal.</description>
     <workerClass>LuciferiumOverhaul.LOSevereWithdrawalThoughtWorker</workerClass>
     <stages>
       <li>
-        <label>Schwerer Luciferium-Entzug</label>
+        <label>Severe Luciferium Withdrawal</label>
         <baseMoodEffect>-60</baseMoodEffect>
       </li>
     </stages>
