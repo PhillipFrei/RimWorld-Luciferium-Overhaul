@@ -27,7 +27,7 @@ namespace LuciferiumOverhaul
 
         // Genetic implantation, gene extraction and their recovery timers are deliberately
         // outside the scope of the Luciferium overhaul.
-        private static bool IsProtectedGeneticState(string name)
+        internal static bool IsProtectedGeneticState(string name)
         {
             return name.StartsWith("Xenogerm", StringComparison.OrdinalIgnoreCase)
                 || name.StartsWith("GeneRegrow", StringComparison.OrdinalIgnoreCase)
@@ -47,6 +47,11 @@ namespace LuciferiumOverhaul
 
             if (h is Hediff_MissingPart || h is Hediff_AddedPart)
                 return false;
+            if (n.IndexOf("Pregnan", StringComparison.OrdinalIgnoreCase) >= 0)
+                return false;
+            var settings = Settings;
+            if (settings.blockedMajorHediffs.Contains(n)) return false;
+            if (settings.forcedMajorHediffs.Contains(n)) return true;
 
             // Explicit fallbacks support addiction defs that do not inherit Hediff_Addiction.
             // Do not remove gene-related dependencies or arbitrary positive Hediffs.
