@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/ThingDef[defName="MedicineUltratech"]/statBases/MedicalPotency</xpath>
+    <value><MedicalPotency>2.0</MedicalPotency></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/ThingDef[defName="MedicineUltratech"]/statBases/MedicalQualityMax</xpath>
+    <value><MedicalQualityMax>1.5</MedicalQualityMax></value>
+  </Operation>
+</Patch>
