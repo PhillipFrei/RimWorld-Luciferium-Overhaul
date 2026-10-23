@@ -1,0 +1,18 @@
+using RimWorld;
+using UnityEngine;
+using Verse;
+namespace LuciferiumOverhaul {
+ public class LOSettings:ModSettings {
+  public int moodBonus=30;public float luciferiumFallPerDay=0.10f;public int smallHealingHours=4;public int majorHealingDays=3;public float smallInjuryMaxSeverity=5f;public int targetAgeYears=21;public int rejuvenationYearsPerDay=1;
+  public override void ExposeData(){base.ExposeData();Scribe_Values.Look(ref moodBonus,"moodBonus",30);Scribe_Values.Look(ref luciferiumFallPerDay,"luciferiumFallPerDay",0.10f);Scribe_Values.Look(ref smallHealingHours,"smallHealingHours",4);Scribe_Values.Look(ref majorHealingDays,"majorHealingDays",3);Scribe_Values.Look(ref smallInjuryMaxSeverity,"smallInjuryMaxSeverity",5f);Scribe_Values.Look(ref targetAgeYears,"targetAgeYears",21);Scribe_Values.Look(ref rejuvenationYearsPerDay,"rejuvenationYearsPerDay",1);}
+ }
+ public class LOMod:Mod {
+  private readonly LOSettings settings;
+  public LOMod(ModContentPack content):base(content){settings=GetSettings<LOSettings>();LongEventHandler.ExecuteWhenFinished(ApplyRuntimeSettings);}
+  private void ApplyRuntimeSettings(){ApplyMood();NeedDef need=DefDatabase<NeedDef>.GetNamedSilentFail("Chemical_Luciferium");if(need!=null)need.fallPerDay=Mathf.Clamp(settings.luciferiumFallPerDay,0.10f,0.30f);}
+  private void ApplyMood(){ThoughtDef thought=DefDatabase<ThoughtDef>.GetNamedSilentFail("LO_LuciferiumMood");if(thought!=null&&thought.stages!=null&&thought.stages.Count>0)thought.stages[0].baseMoodEffect=settings.moodBonus;}
+  public override string SettingsCategory()=> "Luciferium Overhaul";
+  public override void DoSettingsWindowContents(Rect rect){var list=new Listing_Standard();list.Begin(rect);list.Label("Luciferium-Stimmungsbonus: "+settings.moodBonus);int mood=(int)list.Slider(settings.moodBonus,-100,100);if(mood!=settings.moodBonus){settings.moodBonus=mood;ApplyMood();}list.Gap();list.Label("Luciferium-Bedarfsverbrauch pro Tag: "+settings.luciferiumFallPerDay.ToString("0.00"));float fall=(float)System.Math.Round(list.Slider(settings.luciferiumFallPerDay,0.10f,0.30f),2);if(System.Math.Abs(fall-settings.luciferiumFallPerDay)>0.0001f){settings.luciferiumFallPerDay=fall;ApplyRuntimeSettings();}list.Label("Richtwert zwischen Dosen: "+(0.90f/settings.luciferiumFallPerDay).ToString("0.0")+" Tage");list.Gap();list.Label("Schnelle Heilung: alle "+settings.smallHealingHours+" Stunden");settings.smallHealingHours=(int)list.Slider(settings.smallHealingHours,1,4);list.Label("Große Heilung: alle "+settings.majorHealingDays+" Tage");settings.majorHealingDays=(int)list.Slider(settings.majorHealingDays,1,9);list.Label("Max. Schwere kleiner Verletzungen: "+settings.smallInjuryMaxSeverity.ToString("0"));settings.smallInjuryMaxSeverity=(int)list.Slider(settings.smallInjuryMaxSeverity,1,20);list.Label("Zielalter: "+settings.targetAgeYears);settings.targetAgeYears=(int)list.Slider(settings.targetAgeYears,18,100);list.Label("Verjüngung: 1 biologisches Jahr pro Tag (fest)");list.Gap();list.Label("Glitzerwelt-Medizin noch nicht umgesetzt.");list.End();base.DoSettingsWindowContents(rect);}
+  public override void WriteSettings(){base.WriteSettings();ApplyRuntimeSettings();}
+ }
+}
