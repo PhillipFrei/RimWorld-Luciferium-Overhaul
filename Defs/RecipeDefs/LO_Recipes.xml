@@ -2,8 +2,8 @@
 <Defs>
   <RecipeDef>
     <defName>LO_MakeLuciferium</defName>
-    <label>Luciferium herstellen</label>
-    <jobString>Stelle Luciferium her.</jobString>
+    <label>Make Luciferium</label>
+    <jobString>Making Luciferium.</jobString>
     <workAmount>900</workAmount>
     <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
     <workSkill>Intellectual</workSkill>
@@ -19,8 +19,8 @@
   </RecipeDef>
   <RecipeDef>
     <defName>LO_MakeLuciferium10</defName>
-    <label>Luciferium herstellen (10×)</label>
-    <jobString>Stelle 10 Luciferium her.</jobString>
+    <label>Make Luciferium (10×)</label>
+    <jobString>Making 10 Luciferium.</jobString>
     <workAmount>9000</workAmount>
     <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
     <workSkill>Intellectual</workSkill>
@@ -36,8 +36,8 @@
   </RecipeDef>
   <RecipeDef>
     <defName>LO_MakeGlitterworldMedicine</defName>
-    <label>Glitzerwelt-Medizin herstellen</label>
-    <jobString>Stelle Glitzerwelt-Medizin her.</jobString>
+    <label>Make Glitterworld Medicine</label>
+    <jobString>Making glitterworld medicine.</jobString>
     <workAmount>1100</workAmount>
     <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
     <workSkill>Intellectual</workSkill>
@@ -52,8 +52,8 @@
   </RecipeDef>
   <RecipeDef>
     <defName>LO_MakeGlitterworldMedicine10</defName>
-    <label>Glitzerwelt-Medizin herstellen (10×)</label>
-    <jobString>Stelle 10 Glitzerwelt-Medizin her.</jobString>
+    <label>Make Glitterworld Medicine (10×)</label>
+    <jobString>Making 10 glitterworld medicine.</jobString>
     <workAmount>11000</workAmount>
     <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
     <workSkill>Intellectual</workSkill>
